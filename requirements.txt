@@ -1,0 +1,4 @@
+kivy==1.11.1
+kivymd==0.104.1
+webbrowser==0.10.2
+pymongo==4.2.0
