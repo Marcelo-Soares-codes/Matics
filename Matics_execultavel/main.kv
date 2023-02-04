@@ -1,0 +1,1634 @@
+Screen_Manager:
+    Login_Screen:
+    Register_Screen:
+    Home_Screen:
+    Estudar_Simples_Screen:
+    Formula_Simples_Screen:
+    Estudar_Compostos_Screen:
+    Formula_Compostos_Screen:
+    Exercicio_Simples_Screen:
+    Exercicio_Composto_Screen:
+    Cadastrar_Simples_Screen:
+    Cadastrar_Composto_Screen:
+
+<Login_Screen>:
+    name:'login'
+    MDBoxLayout:
+        orientation: "horizontal"
+        MDFloatLayout:
+            id: Login
+            md_bg_color: "#EC5952"
+            Image:
+                source: 'assets/user_azul.png'
+                size_hint: None, None
+                size: 165, 165
+                pos_hint: {'center_x':.5, 'center_y': .8}
+
+            MDLabel:
+                text: 'Bem Vindo!'
+                font_name: 'Roboto-Bold'
+                halign: 'center'
+                pos_hint: {'center_y': 0.65}
+                color: "white"
+                font_size: 48
+
+            MDTextField:
+                id: email
+                hint_text: "E-mail"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.5, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDTextField:
+                id: senha
+                hint_text: "Senha"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.4, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDFillRoundFlatButton:
+                text: "Entrar"
+                font_name: 'Roboto-Bold'
+                font_size: 24
+                text_color: "white"
+                md_bg_color: "#3485A7"
+                size_hint: .7, .06
+                pos_hint: {"center_x": .5 ,"center_y": .23}
+                on_release:
+                    root.login()
+
+            MDLabel:
+                text: 'Ainda não tem conta?'
+                color: "white"
+                halign: 'center'
+                pos_hint: {'center_y': 0.15}
+                font_size: 14
+
+            MDFlatButton:
+                text: "Registrar-se"
+                theme_text_color: "Custom"
+                text_color: "blue"
+                pos_hint: {'center_x': .5,'center_y': .12}
+                font_size: 14
+                on_release:
+                    app.root.current = "registrar"
+
+        MDFloatLayout:
+            MDLabel:
+                text: 'Matics'
+                font_name: 'Roboto-Bold'
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .8}
+                color: "#0C0756"
+                font_size: 60
+
+            Image:
+                source: 'assets/juros.png'
+                size_hint: 1, 1
+                pos_hint: {'center_x':.5, 'center_y': .55}
+
+            MDLabel:
+                text: 'Desenvolvido por'
+                font_name: 'Roboto-Bold'
+                color: "#EC5952"
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .185}
+                font_size: 20
+
+            MDLabel:
+                text: 'Marcelo Soares'
+                font_name: 'Roboto-Bold'
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .15}
+                font_size: 28
+
+            MDIcon:
+                icon: "instagram"
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.4, 'center_y': .12}
+                font_size: 14
+            MDLabel:
+                text: "s.soares_marcelo"
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.52, 'center_y': .12}
+                font_size: 14
+
+<Register_Screen>:
+    name:'registrar'
+    MDBoxLayout:
+        orientation: "horizontal"
+        MDFloatLayout:
+            id: Registrar
+            md_bg_color: "#EC5952"
+            MDLabel:
+                text: 'Registrar-se'
+                font_name: 'Roboto-Bold'
+                halign: 'center'
+                pos_hint: {'center_y': 0.88}
+                color: "white"
+                font_size: 48
+
+            MDTextField:
+                id: nome
+                hint_text: "Nome"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.7, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDTextField:
+                id: email
+                hint_text: "E-mail"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.6, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDTextField:
+                id: senha
+                hint_text: "Senha"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.5, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDTextField:
+                id: conf_senha
+                hint_text: "Confirmar Senha"
+                hint_text_color_focus: "white"
+                pos_hint: {'center_y': 0.4, 'center_x': 0.45}
+                size_hint: .7, .1
+                on_hint_text_color_normal: "white"
+                text_color_focus: "white"
+
+            MDFillRoundFlatButton:
+                text: "Registrar-se"
+                font_name: 'Roboto-Bold'
+                font_size: 24
+                text_color: "white"
+                md_bg_color: "#3485A7"
+                size_hint: .7, .06
+                pos_hint: {"center_x": .5 ,"center_y": .23}
+                on_release:
+                    root.registrar()
+
+            MDLabel:
+                text: 'Já tem uma conta?'
+                color: "white"
+                halign: 'center'
+                pos_hint: {'center_y': 0.15}
+                font_size: 14
+
+            MDFlatButton:
+                text: "Login"
+                theme_text_color: "Custom"
+                text_color: "blue"
+                pos_hint: {'center_x': .5,'center_y': .12}
+                font_size: 14
+                on_release:
+                    app.root.current = "login"
+
+        MDFloatLayout:
+            MDLabel:
+                text: 'Matics'
+                font_name: 'Roboto-Bold'
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .8}
+                color: "#0C0756"
+                font_size: 60
+
+            Image:
+                source: 'assets/juros.png'
+                size_hint: 1, 1
+                pos_hint: {'center_x':.5, 'center_y': .55}
+
+            MDLabel:
+                text: 'Desenvolvido por'
+                font_name: 'Roboto-Bold'
+                color: "#EC5952"
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .185}
+                font_size: 20
+
+            MDLabel:
+                text: 'Marcelo Soares'
+                font_name: 'Roboto-Bold'
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.5, 'center_y': .15}
+                font_size: 28
+
+            MDIcon:
+                icon: "instagram"
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.4, 'center_y': .12}
+                font_size: 14
+            MDLabel:
+                text: "s.soares_marcelo"
+                color: "#0C0756"
+                halign: 'center'
+                pos_hint: {'center_x':.52, 'center_y': .12}
+                font_size: 14
+
+<Home_Screen>:
+    name:'home'
+    MDBoxLayout:
+        orientation: "vertical"
+        MDBoxLayout:
+            MDFloatLayout:
+                MDLabel:
+                    text: 'Escolha o Assunto!'
+                    font_name: 'Roboto-Bold'
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.8}
+                    color: "#0C0756"
+                    font_size: 48
+
+                MDLabel:
+                    padding: 100, 20
+                    text: 'Pontos'
+                    font_name: 'Roboto-Bold'
+                    pos_hint: {'center_y': 0.57, 'center_x': .8}
+                    color: "#EE8F00"
+                    font_size: 34
+
+                MDFloatLayout:
+                    id: Pontos
+                    MDIconButton:
+                        icon: "eye"
+                        id: icon_olho
+                        pos_hint: {'center_y': 2.55, 'center_x': .54}
+                        theme_text_color: "Custom"
+                        text_color: "#EE8F00"
+                        on_release:
+                            self.icon = "eye" if self.icon == "" else ""
+                            root.pontos() if self.icon == "" else root.remove()
+
+
+        MDBoxLayout:
+            MDFloatLayout:
+                md_bg_color: "#EC5952"
+                Image:
+                    source: 'assets/juros_compostos.jpg'
+                    size_hint: None, None
+                    size: 350, 350
+                    pos_hint: {'center_x':.5, 'center_y': .69}
+
+            MDFloatLayout:
+
+            MDFloatLayout:
+                md_bg_color: "#EC5952"
+                Image:
+                    pos_hint_x: "right"
+                    source: 'assets/juros_simples.jpeg'
+                    size_hint: 1, 1
+                    pos_hint: {'center_x':.5, 'center_y': .69}
+
+        MDBoxLayout:
+            MDFloatLayout:
+                id: simples
+                md_bg_color: "#EC5952"
+                MDRaisedButton:
+                    text: "Exercícios"
+                    font_name: 'Roboto-Bold'
+                    font_size: 24
+                    text_color: "#EC5952"
+                    md_bg_color: "white"
+                    size_hint: .7, .06
+                    pos_hint: {"center_x": .5 ,"center_y": .6}
+                    on_release:
+                        root.mudar_icon()
+                        root.exercicio_simples()
+
+                MDRaisedButton:
+                    text: "Estudar"
+                    font_name: 'Roboto-Bold'
+                    font_size: 24
+                    text_color: "#EC5952"
+                    md_bg_color: "white"
+                    size_hint: .7, .06
+                    pos_hint: {"center_x": .5 ,"center_y": .3}
+                    on_release:
+                        root.mudar_icon()
+                        app.root.current = "estudar_simples"
+
+                MDLabel:
+                    text: 'Juros Simples'
+                    font_name: 'Roboto-Bold'
+                    halign: 'center'
+                    pos_hint: {'center_y': .95}
+                    color: "white"
+                    font_size: 35
+
+            MDFloatLayout:
+
+            MDFloatLayout:
+                id: compostos
+                md_bg_color: "#EC5952"
+                MDRaisedButton:
+                    text: "Exercícios"
+                    font_name: 'Roboto-Bold'
+                    font_size: 24
+                    text_color: "#EC5952"
+                    md_bg_color: "white"
+                    size_hint: .7, .06
+                    pos_hint: {"center_x": .5 ,"center_y": .6}
+                    on_release:
+                        root.mudar_icon()
+                        root.exercicio_composto()
+
+                MDRaisedButton:
+                    text: "Estudar"
+                    font_name: 'Roboto-Bold'
+                    font_size: 24
+                    text_color: "#EC5952"
+                    md_bg_color: "white"
+                    size_hint: .7, .06
+                    pos_hint: {"center_x": .5 ,"center_y": .3}
+                    on_release:
+                        root.mudar_icon()
+                        app.root.current = "estudar_compostos"
+
+                MDLabel:
+                    text: 'Juros Compostos'
+                    font_name: 'Roboto-Bold'
+                    pos_hint: {'center_y': .95, 'center_x': .6}
+                    color: "white"
+                    font_size: 35
+
+    MDFloatLayout:
+        id: tela_zerado
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: 'OPS, Parece que seus pontos estão zerados!\nTente revisar o assunto para conseguir jogar novamente!\n\n Você pode assistir videos na página de estudos!'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .5 ,"center_y": .1}
+            on_release:
+                root.mudar_icon()
+                root.voltar_home()
+
+<Estudar_Simples_Screen>:
+    name: "estudar_simples"
+    MDFloatLayout:
+        md_bg_color: "#EC5952"
+        MDLabel:
+            text: 'Juros Simples'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.9}
+            color: "white"
+            font_size: 54
+
+        MDLabel:
+            text: 'O que é?'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.7}
+            color: "white"
+            font_size: 42
+
+        MDLabel:
+            padding: 20, 40
+            text: 'Os juros simples são correções feitas em um valor aplicado ou devido. Os juros são calculados a partir de uma porcentagem preestabelecida e leva em consideração o período da aplicação ou da dívida. Um valor aplicado é chamado de capital, já a porcentagem de correção é chamada de taxa de juros.'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.45}
+            color: "white"
+            font_size: 24
+
+        MDFillRoundFlatButton:
+            text: "Fórmula"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .25, .06
+            pos_hint: {"center_x": .83 ,"center_y": .07}
+            on_release:
+                app.root.current = "formula_simples"
+
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+<Formula_Simples_Screen>:
+    name: "formula_simples"
+    MDFloatLayout:
+        md_bg_color: "#EC5952"
+        MDLabel:
+            text: 'Juros Simples'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.9}
+            color: "white"
+            font_size: 54
+
+        MDLabel:
+            text: 'Fórmula'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.7}
+            color: "white"
+            font_size: 42
+
+        MDLabel:
+            padding: 20, 40
+            text: 'J = C.I.T'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.57}
+            color: "white"
+            font_size: 56
+
+        MDLabel:
+            padding: 80, 20
+            text: 'J = juros simples\nC = capital inicial\ni = taxa de juros\nt = tempo da aplicação'
+            font_name: 'Roboto-Bold'
+            halign: 'left'
+            pos_hint: {'center_y': 0.35}
+            color: "white"
+            font_size: 34
+
+        MDFillRoundFlatButton:
+            text: "Vídeo"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .25, .06
+            pos_hint: {"center_x": .83 ,"center_y": .07}
+            on_release:
+                root.video()
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "estudar_simples"
+
+<Estudar_Compostos_Screen>:
+    name: "estudar_compostos"
+    MDFloatLayout:
+        md_bg_color: "#EC5952"
+        MDLabel:
+            text: 'Juros Compostos'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.9}
+            color: "white"
+            font_size: 54
+
+        MDLabel:
+            text: 'O que é?'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.7}
+            color: "white"
+            font_size: 42
+
+        MDLabel:
+            padding: 20, 40
+            text: 'Juros compostos são a adição de juros à soma do principal de um empréstimo ou depósito, ou em outras palavras, juros sobre o principal mais juros.'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.45}
+            color: "white"
+            font_size: 24
+
+        MDFillRoundFlatButton:
+            text: "Fórmula"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .25, .06
+            pos_hint: {"center_x": .83 ,"center_y": .07}
+            on_release:
+                app.root.current = "formula_compostos"
+
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+<Formula_Compostos_Screen>:
+    name: "formula_compostos"
+    MDFloatLayout:
+        md_bg_color: "#EC5952"
+        MDLabel:
+            text: 'Juros Compostos'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.9}
+            color: "white"
+            font_size: 54
+
+        MDLabel:
+            text: 'Fórmula'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.7}
+            color: "white"
+            font_size: 42
+
+        MDLabel:
+            padding: 20, 40
+            text: 'M = C (1+i)^t'
+            font_name: 'Roboto-Bold'
+            halign: 'center'
+            pos_hint: {'center_y': 0.57}
+            color: "white"
+            font_size: 56
+
+        MDLabel:
+            padding: 80, 20
+            text: 'M = montante acumulado\nC = capital investido\ni = taxa de juros\nt = período de tempo'
+            font_name: 'Roboto-Bold'
+            halign: 'left'
+            pos_hint: {'center_y': 0.35}
+            color: "white"
+            font_size: 34
+
+        MDFillRoundFlatButton:
+            text: "Vídeo"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .25, .06
+            pos_hint: {"center_x": .83 ,"center_y": .07}
+            on_release:
+                root.video()
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "#EC5952"
+            md_bg_color: "white"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "estudar_compostos"
+
+<Exercicio_Simples_Screen>:
+    name:'exercicio_simples'
+    MDFloatLayout:
+        MDLabel:
+            text: 'Escolha um Card'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDRaisedButton:
+            text: "Card 1"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .2 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDRaisedButton:
+            text: "Card 2"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .5 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDRaisedButton:
+            text: "Card 3"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .8 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+    MDFloatLayout:
+        id: tela_questao
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Questão'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDLabel:
+            text: ''
+            id: lbquestao
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.66}
+            color: "#EC5952"
+            font_size: 24
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Digite o valor de cada item!'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.38}
+            color: "#0C0756"
+            font_size: 24
+
+        MDLabel:
+            text: 'OBS: Se o valor ainda existir digite (?)'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.335}
+            color: "#4E4E4E"
+            font_size: 24
+
+        MDLabel:
+            text: 'J ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.15}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuej
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.23}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'C ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.35}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuec
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.43}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'I ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.55}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuei
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.63}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'T ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.75}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            id: valuet
+            height: "30dp"
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.83}
+            size_hint: None, None
+            size: 85, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                root.voltar_cards()
+
+        MDFillRoundFlatButton:
+            text: "Proximo"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .88 ,"center_y": .07}
+            on_release:
+                root.voltar_cards()
+                root.responder()
+
+    MDFloatLayout:
+        id: responder_questao
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Qual foi o valor encontrado após o cálculo?'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Digite aqui'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valueresposta
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.5, 'center_x': 0.5}
+            size_hint: None, None
+            size: 200, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                root.voltar_questao()
+
+        MDFillRoundFlatButton:
+            text: "Conferir"
+            font_name: 'Roboto-Bold'
+            font_size: 30
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .19, .08
+            pos_hint: {"center_x": .5 ,"center_y": .35}
+            on_release:
+                root.conferir_questao()
+
+    MDFloatLayout:
+        id: tela_resposta
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: ''
+            id: parabens
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.83}
+            color: "green"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: '+10 Pontos'
+            id: pontos
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.93}
+            color: "green"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Sua Resposta'
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.73}
+            color: "#0C0756"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'J = 10'
+            id:sj
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'C = 10'
+            id:sc
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'I = 10'
+            id:si
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'T = 10'
+            id:st
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta = 10'
+            id:sresposta
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta Certa'
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.045, 'center_y': 0.75}
+            color: "#0C0756"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'J = 10'
+            id:cj
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'C = 10'
+            id:cc
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.5}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'I = 10'
+            id:ci
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.4}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'T = 10'
+            id:ct
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.3}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta = 10'
+            id:cresposta
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.2}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDFillRoundFlatButton:
+            text: "Sair"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .5 ,"center_y": .075}
+            on_release:
+                root.voltar_home()
+                app.root.current = "home"
+
+<Exercicio_Composto_Screen>:
+    name:'exercicio_composto'
+    MDFloatLayout:
+        MDLabel:
+            text: 'Escolha um Card'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDRaisedButton:
+            text: "Card 1"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .2 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDRaisedButton:
+            text: "Card 2"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .5 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDRaisedButton:
+            text: "Card 3"
+            font_size: 60
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .25, .6
+            pos_hint: {"center_x": .8 ,"center_y": .5}
+            on_release:
+                root.questao()
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+    MDFloatLayout:
+        id: tela_questao
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Questão'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDLabel:
+            text: ''
+            id: lbquestao
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.66}
+            color: "#EC5952"
+            font_size: 24
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Digite o valor de cada item!'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.38}
+            color: "#0C0756"
+            font_size: 24
+
+        MDLabel:
+            text: 'OBS: Se o valor ainda existir digite (?)'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.335}
+            color: "#4E4E4E"
+            font_size: 24
+
+        MDLabel:
+            text: 'M ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.15}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuem
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.23}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'C ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.35}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuec
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.43}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'i ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.55}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuei
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.63}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 't ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.75}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            id: valuet
+            height: "30dp"
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.25, 'center_x': 0.83}
+            size_hint: None, None
+            size: 85, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                root.voltar_cards()
+
+        MDFillRoundFlatButton:
+            text: "Proximo"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .88 ,"center_y": .07}
+            on_release:
+                root.voltar_cards()
+                root.responder()
+
+    MDFloatLayout:
+        id: responder_questao
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Qual foi o valor encontrado após o cálculo?'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Digite aqui'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valueresposta
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.5, 'center_x': 0.5}
+            size_hint: None, None
+            size: 200, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                root.voltar_questao()
+
+        MDFillRoundFlatButton:
+            text: "Conferir"
+            font_name: 'Roboto-Bold'
+            font_size: 30
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .19, .08
+            pos_hint: {"center_x": .5 ,"center_y": .35}
+            on_release:
+                root.conferir_questao()
+
+    MDFloatLayout:
+        id: tela_resposta
+        pos_hint: {'center_y': 10}
+        md_bg_color: "white"
+        MDLabel:
+            text: ''
+            id: parabens
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.83}
+            color: "green"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: '+10 Pontos'
+            id: pontos
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.93}
+            color: "green"
+            font_size: 48
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Sua Resposta'
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.73}
+            color: "#0C0756"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'M = 10'
+            id:sm
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'C = 10'
+            id:sc
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'I = 10'
+            id:si
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'T = 10'
+            id:st
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta = 10'
+            id:sresposta
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta Certa'
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.045, 'center_y': 0.75}
+            color: "#0C0756"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'M = 10'
+            id:cm
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.6}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'C = 10'
+            id:cc
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.5}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'I = 10'
+            id:ci
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.4}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'T = 10'
+            id:ct
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.3}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDLabel:
+            text: 'Resposta = 10'
+            id:cresposta
+            font_name: 'Roboto-Bold'
+            pos_hint: {'center_x': 1.05, 'center_y': 0.2}
+            color: "#EC5952"
+            font_size: 40
+            padding: 80, 40
+
+        MDFillRoundFlatButton:
+            text: "Sair"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .5 ,"center_y": .075}
+            on_release:
+                root.voltar_home()
+                app.root.current = "home"
+
+
+<Cadastrar_Simples_Screen>:
+    name: "cadastrar_simples"
+    MDFloatLayout:
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Cadastrar Questão Juros Simples'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDLabel:
+            text: 'Qual será a pergunta?'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.75, 'center_x': 0.32}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuequestao
+            max_text_length: 552
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.62, 'center_x': 0.5}
+            size_hint: None, None
+            size: 750, 120
+
+        MDLabel:
+            text: 'J ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.15}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuej
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.23}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'C ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.35}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuec
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.43}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'I ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.55}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuei
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.63}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'T ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.75}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            id: valuet
+            height: "30dp"
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.83}
+            size_hint: None, None
+            size: 85, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+        MDLabel:
+            text: 'Resposta ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.205, 'center_x': 0.4}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valueresposta
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.2, 'center_x': 0.605}
+            size_hint: None, None
+            size: 200, 30
+
+        MDFillRoundFlatButton:
+            text: "Cadastar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .16, .06
+            pos_hint: {"center_x": .88 ,"center_y": .07}
+            on_release:
+                root.cadastrar()
+                app.root.current = "home"
+
+<Cadastrar_Composto_Screen>:
+    name: "cadastrar_composto"
+    MDFloatLayout:
+        md_bg_color: "white"
+        MDLabel:
+            text: 'Cadastrar Questão Juros Simples'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.9}
+            color: "#0C0756"
+            font_size: 48
+
+        MDLabel:
+            text: 'Qual será a pergunta?'
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.75, 'center_x': 0.32}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuequestao
+            max_text_length: 552
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.62, 'center_x': 0.5}
+            size_hint: None, None
+            size: 750, 120
+
+        MDLabel:
+            text: 'M ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.15}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuem
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.23}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'C ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.35}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuec
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.43}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'I ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.55}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valuei
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.63}
+            size_hint: None, None
+            size: 85, 30
+
+        MDLabel:
+            text: 'T ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.75}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            id: valuet
+            height: "30dp"
+            background_color: "#EC5952"
+            pos_hint: {'center_y': 0.4, 'center_x': 0.83}
+            size_hint: None, None
+            size: 85, 30
+
+        MDFillRoundFlatButton:
+            text: "Voltar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .15, .06
+            pos_hint: {"center_x": .12 ,"center_y": .07}
+            on_release:
+                app.root.current = "home"
+
+        MDLabel:
+            text: 'Resposta ='
+            font_name: 'Roboto-Bold'
+            halign: "center"
+            pos_hint: {'center_y': 0.205, 'center_x': 0.4}
+            color: "#EC5952"
+            font_size: 40
+
+        MDTextFieldRect:
+            height: "30dp"
+            id: valueresposta
+            background_color: "#EC5952"
+            hint_text_color_normal: "white"
+            pos_hint: {'center_y': 0.2, 'center_x': 0.605}
+            size_hint: None, None
+            size: 200, 30
+
+        MDFillRoundFlatButton:
+            text: "Cadastrar"
+            font_name: 'Roboto-Bold'
+            font_size: 24
+            text_color: "white"
+            md_bg_color: "#EC5952"
+            size_hint: .16, .06
+            pos_hint: {"center_x": .88 ,"center_y": .07}
+            on_release:
+                root.cadastrar()
+                app.root.current = "home"
+
